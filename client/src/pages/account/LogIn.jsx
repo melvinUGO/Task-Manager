@@ -23,13 +23,6 @@ const LogIn = () => {
     }
   };
 
-  useEffect(() => {
-    // login user if auth token is saved in local storage
-    if (token) {
-      return navigate("/home");
-    }
-  }, []);
-
   return (
     <div>
       <div className="account-container">
@@ -37,7 +30,12 @@ const LogIn = () => {
         <h4>Log in to your account</h4>
         <p>
           Don't have an account?{" "}
-          <span onClick={() => navigate("/register")}>Sign Up</span>
+          <span
+            className="account-page-link"
+            onClick={() => navigate("/register")}
+          >
+            Sign Up
+          </span>
         </p>
         <div>
           <form onSubmit={handleLogin}>
